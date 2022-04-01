@@ -1,0 +1,14 @@
+<ng-container *ngIf="people.length > 0 else nopeople">
+    <div *ngFor="let person of people">
+        {{person.name}}
+    </div>
+</ng-container>
+
+<ng-template #nopeople>
+    <ng-container *ngTemplateOutlet="customNopeopleTpl? customNopeopleTpl: defaultNopeople"></ng-container>
+</ng-template>
+
+<ng-template #defaultNopeople>
+    <div>En ingles</div>
+</ng-template>
+
